@@ -183,7 +183,7 @@ var/global/list/disease2_list = list()
 	disease.antigen   = antigen
 	disease.uniqueID = uniqueID
 	disease.speed = speed
-//	disease.stage = stage
+	disease.stage = stage - 1
 //	disease.clicks = clicks
 	for(var/datum/disease2/effect/e in effects)
 		disease.effects += e.getcopy(disease)
