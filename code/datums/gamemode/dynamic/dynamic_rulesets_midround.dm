@@ -482,3 +482,28 @@
 		message_admins("Rejected catbeast ruleset. Not enough threat somehow??")
 		return FALSE
 	return TRUE
+
+
+
+//////////////////////////////////////////////
+//                                          //
+//               	TOURIST		            ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                 Minor Role               //
+//////////////////////////////////////////////
+
+/datum/dynamic_ruleset/midround/from_ghosts/tourist
+	name = "Tourist"
+	role_category = /datum/role/tourist
+	required_candidates = 1
+	weight = 1
+	cost = 0
+	requirements = list(0,0,0,0,0,0,0,0,0,0)
+
+/datum/dynamic_ruleset/midround/from_ghosts/tourist/acceptable(var/population=0,var/threat=0)
+	if(mode.threat>50) //We're threatening enough!
+		message_admins("Rejected tourist ruleset, [mode.threat] threat was over 50.")
+		return FALSE
+	if(!..())
+		message_admins("Rejected tourist ruleset. Not enough threat somehow??")
+		return FALSE
+	return TRUE
